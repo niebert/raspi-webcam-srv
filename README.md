@@ -17,7 +17,17 @@ Raspberry Pi - Webserver installation Script
 * You can start the WebCam server with `sudo motion -c /etc/motion/motion.conf`
 
 ## Video Streaming with VLC
-As an alternative you can stream the webcam with VLC. In constrast to motion the framerate will be much better. But this will also include a delay of 1-2 seconds. If you use the default Raspberry webcam, activate the camera with `rasp-config`. When the module can be activated, the Pi should be restarted afterwards.
+
+### Requirements
+* USB WebCam
+* USB Soundcard with Audio-In for broadcasting video and sound.
+
+### Installation VLC
+The following video/audio broadcast uses the command line VLC `cvlc`. `raspvid` pipes the video stream into the command line VLC `cvlc`.
+This was added to the README.md as an alternative for `motion` as an updated stream of still images without audio. The following commands will help you to broadcast a video stream including audio. You will be able to stream 
+* video of the webcam and
+* audio of a mircophone 
+with the command line VLC to HTTP port. In constrast to motion the framerate will be much better. But this will also include a delay of 1-2 seconds. If you use the default Raspberry webcam, activate the camera with `rasp-config`. When the module can be activated, the Pi should be restarted afterwards.
 
 Afterwards the Raspberry Pi should be updated to the latest version with the following commands:
 ```bash
