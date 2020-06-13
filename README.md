@@ -53,4 +53,7 @@ Once the stream has started, all you need to do is open a new network stream in 
 Please keep in mind that there is no password protection for viewing the video stream. 
 
 ## Links
-The installation script was based on https://tutorials-raspberrypi.de/raspberry-pi-ueberwachungskamera-livestream-einrichten/
+The installation scripts are based on the recommendations of the following resources:
+* https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu
+* https://tutorials-raspberrypi.de/raspberry-pi-ueberwachungskamera-livestream-einrichten/
+* https://kopfkino.irosaurus.com/webcam-livestream-mit-dem-raspberry-pi/
