@@ -77,15 +77,15 @@ flip_axis none
 
 # Image width (pixels). Valid range: Camera dependent, default: 320
 # e.g. width 352
-width SERVER_VIDEO_WIDTH
+width MOTION_VIDEO_SIZE_WIDTH
 # Image height (pixels). Valid range: Camera dependent, default: 240
 # e.g. height 288
-height SERVER_VIDEO_HEIGHT
+height MOTION_VIDEO_SIZE__HEIGHT
 
 # Maximum number of frames to be captured per second.
 # Valid range: 2-100. Default: 100 (almost no limit).
 # e.g. framerate 10
-framerate SERVER_VIDEO_FRAME_RATE
+framerate MOTION_VIDEO_FRAME_RATE
 
 # Minimum time in seconds between capturing picture frames from the camera.
 # Default: 0 = disabled - the capture rate is given by the camera framerate.
