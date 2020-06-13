@@ -11,6 +11,7 @@ STOP_SCRIPT="stop_motion_srv.sh"
 SERVER_STREAM_PORT="8081"
 ## Default for VIDEO_STREAM_MAXRATE is 1 - means slow update of stream images
 VIDEO_STREAM_MAXRATE="25"
+VIDEO_FRAME_RATE="100"
 ## Video Stream Quality percentage of the source video stream (default 50 means 50%)
 VIDEO_STREAM_QUALITY="100"
 # Video Stream Size
@@ -74,6 +75,8 @@ do
            sed -i "s/MOTION_VIDEO_STREAM_QUALITY/${VIDEO_STREAM_QUALITY}/g" $CONF_FILE 
            echo "  6.5 Replace 'MOTION_SERVER_STREAM_PORT' by '${SERVER_STREAM_PORT}' in file $CONF_FILE"
            sed -i "s/MOTION_SERVER_STREAM_PORT/${SERVER_STREAM_PORT}/g" $CONF_FILE 
+           echo "  6.6 Replace 'MOTION_VIDEO_FRAME_RATE' by '${VIDEO_FRAME_RATE}' in file $CONF_FILE"
+           sed -i "s/MOTION_VIDEO_FRAME_RATE/${VIDEO_FRAME_RATE}/g" $CONF_FILE 
             
             
            sudo cp $CONF_FILE /etc/motion/motion.conf
