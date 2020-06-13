@@ -63,7 +63,7 @@ echo "(3.1) Update Upgrade for 'apt-get'"
 sudo apt-get update
 sudo apt-get upgrade
 echo "(3.2) Install checkinstall"
-sudo apt-get -y install checkinstall
+sudo apt-get install checkinstall
 sudo apt-get -y install autoconf automake build-essential git libass-dev libgpac-dev libsdl1.2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libx11-dev libxext-dev libxfixes-dev pkg-config texi2html zlib1g-dev
 checkinstall yasm libmp3lame-dev libopus-dev
 echo "(3.3) Create '/ffmpeg_sources' "
