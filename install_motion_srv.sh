@@ -20,6 +20,7 @@ VIDEO_SIZE_HEIGHT="288"
 ## For LogiTech C270 set e.g. size to
 VIDEO_SIZE_WIDTH="704"
 VIDEO_SIZE_HEIGHT="576"
+VIDEO_SCALE_BROWSER="100" 
 
 echo "Install WebCam Server with Motion"
 #### stop the 'motion' service if service is running ###
@@ -47,6 +48,14 @@ then
 else
       echo "Set VIDEO_SIZE_HEIGHT='$sizeinput' "
       VIDEO_SIZE_HEIGHT="$sizeinput"
+fi
+read -p "WebCam Video Scale Browser (e.g. ${VIDEO_SCALE_BROWSER})? " sizeinput
+if [ -z "$sizeinput" ]
+then
+      echo "WARNING: \$sizeinput is empty. Use default VIDEO_SCALE_BROWSER='${VIDEO_SCALE_BROWSER}'"
+else
+      echo "Set VIDEO_SCALE_BROWSER='$sizeinput'"
+      VIDEO_SCALE_BROWSER="$sizeinput"
 fi
 echo "List of USB Device"
 echo "------------------"
@@ -79,8 +88,9 @@ do
            sed -i "s/MOTION_SERVER_STREAM_PORT/${SERVER_STREAM_PORT}/g" $CONF_FILE 
            echo "  6.6 Replace 'MOTION_VIDEO_FRAME_RATE' by '${VIDEO_FRAME_RATE}' in file $CONF_FILE"
            sed -i "s/MOTION_VIDEO_FRAME_RATE/${VIDEO_FRAME_RATE}/g" $CONF_FILE 
-            
-            
+           echo "  6.7 Replace 'MOTION_VIDEO_SCALE_BROWSER' by '${VIDEO_SCALE_BROWSER}' in file $CONF_FILE"
+           sed -i "s/MOTION_VIDEO_SCALE_BROWSER/${VIDEO_SCALE_BROWSER}/g" $CONF_FILE 
+             
            sudo cp $CONF_FILE /etc/motion/motion.conf
            echo "Step 7: Copy the default for '/etc/default/motion'"
            sudo cp ./conf/etc_default_motion.conf /etc/default/motion
