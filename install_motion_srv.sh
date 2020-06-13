@@ -26,6 +26,9 @@ sudo apt-get upgrade
 echo "Step 3: Install Software 'git' and 'motion'"
 sudo apt-get install motion -y
 echo "Step 4: Check attached USB Devices" 
+echo "List of USB Device"
+echo "------------------"
+lsusb
 # (P1) prompt user, and read command line argument
 read -p "Do you see your WebCam in list of USB devices? " answer
 
