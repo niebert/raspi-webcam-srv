@@ -453,7 +453,7 @@ stream_port MOTION_SERVER_STREAM_PORT
 
 # Quality of the jpeg (in percent) images produced (default: 50)
 # e.g. stream_quality 50
-stream_quality MOTION_VIDEO_STREAM_QUALILTY
+stream_quality MOTION_VIDEO_STREAM_QUALITY
 
 # Output frames at 1 fps when no motion is detected and increase to the
 # rate given by stream_maxrate when motion is detected (default: off)
