@@ -10,7 +10,7 @@ CONF_FILE="${CONF_DIR}/ffserver_webm.conf"
 START_SCRIPT="start_ffserver.sh"
 STREAM_NAME="webcam"
 STREAM_FORMAT="webm"
-VIDEO_SIZE="368×288"
+VIDEO_SIZE="704×576"
 ## Set Frames per second 
 ## 25 framerate standard video Europe)
 ## VIDEO_FRAME_RATE="25"
