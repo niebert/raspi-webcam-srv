@@ -6,13 +6,17 @@
 CONF_DIR="./conf"
 CONF_FILE="${CONF_DIR}/etc_motion_motion.conf"
 START_SCRIPT="start_motion_srv.sh"
-## Default for VIDEO_FRAME_RATE is 2 - slow update of webcam images
-VIDEO_FRAME_RATE="100"
-## Default for VIDEO_STREAM_RATE is 1 - means slow update of stream images
-VIDEO_STREAM_MAXRATE="100"
+# E.g.set stream_port 8081
+SERVER_STREAM_PORT="8081"
+## Default for VIDEO_STREAM_MAXRATE is 1 - means slow update of stream images
+VIDEO_STREAM_MAXRATE="25"
+## Video Stream Quality percentage of the source video stream (default 50 means 50%)
+VIDEO_STREAM_QUALILTY="100"
 # Video Stream Size
 VIDEO_SIZE_WIDTH="368"
 VIDEO_SIZE_HEIGHT="288"
+
+
 echo "Install WebCam Server with Motion"
 echo "Step 1: Update Software Repository List" 
 sudo apt-get update
@@ -38,8 +42,10 @@ do
            cp ./conf/etc_motion_motion.tpl $CONF_FILE
            sed -i "s/MOTION_VIDEO_SIZE_WIDTH/${VIDEO_SIZE_WIDTH}/g" $CONF_FILE
            sed -i "s/MOTION_VIDEO_SIZE_HEIGHT/${VIDEO_SIZE_HEIGHT}/g" $CONF_FILE
-           sed -i "s/MOTION_VIDEO_FRAME_RATE/${VIDEO_FRAME_RATE}/g" $CONF_FILE 
            sed -i "s/MOTION_VIDEO_STREAM_MAXRATE/${VIDEO_STREAM_MAXRATE}/g" $CONF_FILE 
+           sed -i "s/MOTION_VIDEO_STREAM_QUALITY/${VIDEO_STREAM_QUALITY}/g" $CONF_FILE 
+           sed -i "s/MOTION_SERVER_STREAM_PORT/${SERVER_STREAM_PORT}/g" $CONF_FILE 
+           
            sudo cp $CONF_FILE /etc/motion/motion.conf
            echo "Step 6: Copy the default for '/etc/default/motion'"
            sudo cp ./conf/etc_default_motion.conf /etc/default/motion
