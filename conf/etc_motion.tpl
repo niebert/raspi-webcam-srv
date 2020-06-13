@@ -459,7 +459,8 @@ stream_quality 100
 stream_motion off
 
 # Maximum framerate for stream streams (default: 1)
-stream_maxrate 1
+# E.g. stream_maxrate 1
+stream_maxrate MOTION_STREAM_MAXRATE
 
 # Restrict stream connections to localhost only (default: on)
 stream_localhost off
