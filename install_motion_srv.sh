@@ -30,7 +30,7 @@ echo "Step 3: Install Software 'git' and 'motion'"
 sudo apt-get install motion -y
 echo "Step 4: Check attached USB Devices" 
 echo " "
-read -p "WebCam Width (e.g. 368)? " sizeinput
+read -p "WebCam Width (e.g. ${VIDEO_SIZE_WIDTH})? " sizeinput
 if [ -z "$sizeinput" ]
 then
       echo "WARNING: \$sizeinput is empty. Use default VIDEO_SIZE_WIDTH='${VIDEO_SIZE_WIDTH}'"
@@ -38,7 +38,7 @@ else
       echo "Set VIDEO_SIZE_WIDTH='$sizeinput'"
       VIDEO_SIZE_WIDTH="$sizeinput"
 fi
-read -p "WebCam Height (e.g. 288)? " sizeinput
+read -p "WebCam Height (e.g. ${VIDEO_SIZE_HEIGHT})? " sizeinput
 if [ -z "$sizeinput" ]
 then
       echo "WARNING: \$sizeinput is empty. Use default VIDEO_SIZE_HEIGHT='${VIDEO_SIZE_HEIGHT}'"
