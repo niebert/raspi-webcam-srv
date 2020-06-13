@@ -6,6 +6,7 @@
 CONF_DIR="./conf"
 CONF_FILE="${CONF_DIR}/etc_motion_motion.conf"
 START_SCRIPT="start_motion_srv.sh"
+STOP_SCRIPT="stop_motion_srv.sh"
 # E.g.set stream_port 8081
 SERVER_STREAM_PORT="8081"
 ## Default for VIDEO_STREAM_MAXRATE is 1 - means slow update of stream images
@@ -53,9 +54,17 @@ do
            touch $START_SCRIPT
            echo "#!/bin/sh" >> $START_SCRIPT
            echo "sudo motion -c /etc/motion/motion.conf" >> $START_SCRIPT
-           echo "Step 8: Start 'motion' with Config File"
-           echo "DONE, installed and copied configuration files for motion server."
-           touch 
+           echo "Step 8: Create stop script '${STOP_SCRIPT}' for server 'motion'"
+           touch $STOP_SCRIPT
+           echo "#!/bin/sh" >> $STOP_SCRIPT
+           echo "sudo service motion stop" >> $STOP_SCRIPT
+           echo "Step 9: Now you can start 'motion' with config file with:"
+           echo "  sudo motion -c /etc/motion/motion.conf"
+           echo "or with the start script '${START_SCRIPT}' by"
+           echo "  sh ${START_SCRIPT}"
+           echo "or with the start script '${STOP_SCRIPT}' by"
+           echo "  sh ${STOP_SCRIPT}"
+           echo "DONE, installed and copied configuration files for motion server." 
            break;;
 
    [nN]* ) exit;;
