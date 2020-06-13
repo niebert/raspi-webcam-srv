@@ -1,4 +1,5 @@
 #!/bin/sh
+START_SCRIPT="start_motion_srv.sh"
 echo "Install WebCam Server with Motion"
 echo "Step 1: Update Software Repository List" 
 sudo apt-get update
@@ -21,12 +22,16 @@ do
            sudo chgrp motion /home/pi/Monitor
            chmod g+rwx /home/pi/Monitor
            echo "Step 6: Copy the default 'motion.conf' to '/etc/motion/motion.conf'"
-           sudo cp etc_motion_motion.conf /etc/motion/motion.conf
+           sudo cp conf/etc_motion_motion.conf /etc/motion/motion.conf
            echo "Step 6: Copy the default for '/etc/default/motion'"
-           sudo cp etc_default_motion.conf /etc/default/motion
-           echo "Step 7: Start 'motion' with Config File"
-           sudo motion -c /etc/motion/motion.conf
-           echo "Okay, just installed server script."
+           sudo cp conf/etc_default_motion.conf /etc/default/motion
+           echo "Step 7: Create start script '${START_SCRIPT}' 'motion' with Config File"
+           touch $START_SCRIPT
+           echo "#!/bin/sh" >> $START_SCRIPT
+           echo "sudo motion -c /etc/motion/motion.conf" >> $START_SCRIPT
+           echo "Step 8: Start 'motion' with Config File"
+           echo "DONE, installed and copied configuration files for motion server."
+           touch 
            break;;
 
    [nN]* ) exit;;
