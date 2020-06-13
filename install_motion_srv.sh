@@ -22,6 +22,8 @@ VIDEO_SIZE_WIDTH="704"
 VIDEO_SIZE_HEIGHT="576"
 
 echo "Install WebCam Server with Motion"
+#### stop the 'motion' service if service is running ###
+sudo service motion stop
 echo "Step 1: Update Software Repository List" 
 sudo apt-get update
 echo "Step 2: Upgrade the Software"
