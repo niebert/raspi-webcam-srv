@@ -80,7 +80,7 @@ flip_axis none
 width MOTION_VIDEO_SIZE_WIDTH
 # Image height (pixels). Valid range: Camera dependent, default: 240
 # e.g. height 288
-height MOTION_VIDEO_SIZE__HEIGHT
+height MOTION_VIDEO_SIZE_HEIGHT
 
 # Maximum number of frames to be captured per second.
 # Valid range: 2-100. Default: 100 (almost no limit).
