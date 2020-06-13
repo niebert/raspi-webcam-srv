@@ -46,15 +46,15 @@ do
            chmod g+rwx /home/pi/Monitor
            echo "Step 6: Copy the default 'motion.conf' to '/etc/motion/motion.conf'"
            cp ./conf/etc_motion.tpl $CONF_FILE
-           echo "Replace 'MOTION_VIDEO_SIZE_WIDTH' by '${VIDEO_SIZE_WIDTH}' in file $CONF_FILE"
+           echo "  6.1 Replace 'MOTION_VIDEO_SIZE_WIDTH' by '${VIDEO_SIZE_WIDTH}' in file $CONF_FILE"
            sed -i "s/MOTION_VIDEO_SIZE_WIDTH/${VIDEO_SIZE_WIDTH}/g" $CONF_FILE
-           echo "Replace 'MOTION_VIDEO_SIZE_HEIGHT' by '${VIDEO_SIZE_HEIGHT}' in file $CONF_FILE"
+           echo "  6.2 Replace 'MOTION_VIDEO_SIZE_HEIGHT' by '${VIDEO_SIZE_HEIGHT}' in file $CONF_FILE"
            sed -i "s/MOTION_VIDEO_SIZE_HEIGHT/${VIDEO_SIZE_HEIGHT}/g" $CONF_FILE
-           echo "Replace 'MOTION_VIDEO_STREAM_MAXRATE' by '${VIDEO_STREAM_MAXRATE}' in file $CONF_FILE"
+           echo "  6.3 Replace 'MOTION_VIDEO_STREAM_MAXRATE' by '${VIDEO_STREAM_MAXRATE}' in file $CONF_FILE"
            sed -i "s/MOTION_VIDEO_STREAM_MAXRATE/${VIDEO_STREAM_MAXRATE}/g" $CONF_FILE 
-           echo "Replace 'MOTION_VIDEO_STREAM_QUALITY' by '${VIDEO_STREAM_QUALITY}' in file $CONF_FILE"
+           echo "  6.4 Replace 'MOTION_VIDEO_STREAM_QUALITY' by '${VIDEO_STREAM_QUALITY}' in file $CONF_FILE"
            sed -i "s/MOTION_VIDEO_STREAM_QUALITY/${VIDEO_STREAM_QUALITY}/g" $CONF_FILE 
-           echo "Replace 'MOTION_SERVER_STREAM_PORT' by '${SERVER_STREAM_PORT}' in file $CONF_FILE"
+           echo "  6.5 Replace 'MOTION_SERVER_STREAM_PORT' by '${SERVER_STREAM_PORT}' in file $CONF_FILE"
            sed -i "s/MOTION_SERVER_STREAM_PORT/${SERVER_STREAM_PORT}/g" $CONF_FILE 
            
            sudo cp $CONF_FILE /etc/motion/motion.conf
