@@ -45,7 +45,7 @@ do
            sudo chgrp motion /home/pi/Monitor
            chmod g+rwx /home/pi/Monitor
            echo "Step 6: Copy the default 'motion.conf' to '/etc/motion/motion.conf'"
-           cp ./conf/etc_motion_motion.tpl $CONF_FILE
+           cp ./conf/etc_motion.tpl $CONF_FILE
            sed -i "s/MOTION_VIDEO_SIZE_WIDTH/${VIDEO_SIZE_WIDTH}/g" $CONF_FILE
            sed -i "s/MOTION_VIDEO_SIZE_HEIGHT/${VIDEO_SIZE_HEIGHT}/g" $CONF_FILE
            sed -i "s/MOTION_VIDEO_STREAM_MAXRATE/${VIDEO_STREAM_MAXRATE}/g" $CONF_FILE 
