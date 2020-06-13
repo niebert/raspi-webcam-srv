@@ -3,12 +3,14 @@
 ## GitHub-Source: https://github.com/niebert/raspi-webcam-srv
 ## Further Information see URL: https://kopfkino.irosaurus.com/webcam-livestream-mit-dem-raspberry-pi/
 ## The following variable define the Videostream
-SERVER_PORT="8081"
 CONF_DIR="./conf"
 CONF_FILE="${CONF_DIR}/etc_motion_motion.conf"
 START_SCRIPT="start_motion_srv.sh"
-VIDEO_FRAME_RATE="10"
+## Default for VIDEO_FRAME_RATE is 2 - slow update of webcam images
+VIDEO_FRAME_RATE="100"
+## Default for VIDEO_STREAM_RATE is 1 - means slow update of stream images
 VIDEO_STREAM_MAXRATE="100"
+# Video Stream Size
 VIDEO_SIZE_WIDTH="368"
 VIDEO_SIZE_HEIGHT="288"
 echo "Install WebCam Server with Motion"
