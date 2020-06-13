@@ -14,11 +14,11 @@ VIDEO_STREAM_MAXRATE="25"
 ## Video Stream Quality percentage of the source video stream (default 50 means 50%)
 VIDEO_STREAM_QUALITY="100"
 # Video Stream Size
-VIDEO_SIZE_WIDTH="368"
+VIDEO_SIZE_WIDTH="352"
 VIDEO_SIZE_HEIGHT="288"
 ## For LogiTech C270 set e.g. size to
-VIDEO_SIZE_WIDTH="1280"
-VIDEO_SIZE_HEIGHT="720"
+VIDEO_SIZE_WIDTH="704"
+VIDEO_SIZE_HEIGHT="576"
 
 echo "Install WebCam Server with Motion"
 echo "Step 1: Update Software Repository List" 
