@@ -484,7 +484,7 @@ stream_auth_method 0
 # Percentage to scale the stream image for preview
 # This is scaled on the browser side, motion will keep sending full frames
 # Default: 25
-; stream_preview_scale 25
+stream_preview_scale 100
 
 # Have stream preview image start on a new line
 # Default: no
