@@ -1,5 +1,15 @@
 #!/bin/sh
+## Install ffserver and create config file
+## GitHub-Source: https://github.com/niebert/raspi-webcam-srv
+## Further Information see URL: https://kopfkino.irosaurus.com/webcam-livestream-mit-dem-raspberry-pi/
+## The following variable define the Videostream
+SERVER_PORT="8081"
+CONF_DIR="./conf"
+CONF_FILE="${CONF_DIR}/etc_motion_motion.conf"
 START_SCRIPT="start_motion_srv.sh"
+STREAM_NAME="webcam"
+STREAM_FORMAT="webm"
+VIDEO_SIZE="368×288"
 echo "Install WebCam Server with Motion"
 echo "Step 1: Update Software Repository List" 
 sudo apt-get update
@@ -22,9 +32,11 @@ do
            sudo chgrp motion /home/pi/Monitor
            chmod g+rwx /home/pi/Monitor
            echo "Step 6: Copy the default 'motion.conf' to '/etc/motion/motion.conf'"
-           sudo cp conf/etc_motion_motion.conf /etc/motion/motion.conf
+           cp ./conf/etc_motion_motion.tpl $CONF_FILE
+           sed -i "s/MOTION_VIDEO_SIZE/${VIDEO_SIZE}/g" $CONF_FILE
+           sudo cp $CONF_FILE /etc/motion/motion.conf
            echo "Step 6: Copy the default for '/etc/default/motion'"
-           sudo cp conf/etc_default_motion.conf /etc/default/motion
+           sudo cp ./conf/etc_default_motion.conf /etc/default/motion
            echo "Step 7: Create start script '${START_SCRIPT}' 'motion' with Config File"
            touch $START_SCRIPT
            echo "#!/bin/sh" >> $START_SCRIPT
