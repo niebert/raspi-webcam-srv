@@ -25,7 +25,8 @@ You can also start the `motion` server manually by `sudo motion -c /etc/motion/m
 
 ### Requirements
 * USB WebCam
-* USB Soundcard with Audio-In for broadcasting video and sound.
+* USB Sound Device with Audio-In for broadcasting video and sound with an attached microphone to your Raspberry Pi.
+The sound for the video stream is recorded with USB sound device Please run `alsamixer` on your Raspberry Pi prior to the start of the webcam server. With `alsamixer` set the audio to USB PnP Sound Device, After this setting you can hear audio through the USB sound card. 
 
 ### Installation VLC
 The following video/audio broadcast uses the command line VLC `cvlc`. `raspvid` pipes the video stream into the command line VLC `cvlc`.
