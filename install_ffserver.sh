@@ -68,13 +68,26 @@ sudo apt-get install yasm
 sudo  apt-get install libmp3lame-dev libopus-dev
 
 sudo apt-get -y install autoconf automake build-essential git libass-dev libgpac-dev libsdl1.2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libx11-dev libxext-dev libxfixes-dev pkg-config texi2html zlib1g-dev
-checkinstall yasm libmp3lame-dev libopus-dev
+#### checkinstall yasm libmp3lame-dev libopus-dev
 echo "(3.3) Create '/ffmpeg_sources' "
 ### recursive remove of previous 'ffmepg_source' 
 rm -R  ~/ffmpeg_sources
 ### create a new empty directory 'ffmepg_source'
 mkdir ~/ffmpeg_sources
 cd ~/ffmpeg_sources
+#cd /usr/src
+#git clone git://git.videolan.org/x264.git
+#cd x264
+#./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl
+#make
+#sudo make install
+#cd /usr/src
+#git clone git://source.ffmpeg.org/ffmpeg.git
+#cd ffmpeg/
+#sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree
+#make
+#echo "Duration 'make install" approx. 4h"
+#make install
 git clone git://git.videolan.org/x264.git
 cd x264
 ./configure –prefix=“$HOME/ffmpeg_build“ –bindir=“$HOME/bin“ –enable-static
