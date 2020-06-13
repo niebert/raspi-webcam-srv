@@ -66,6 +66,7 @@ do
            echo "Step 8: Create start script '${START_SCRIPT}' 'motion' with Config File"
            touch $START_SCRIPT
            echo "#!/bin/sh" >> $START_SCRIPT
+           echo "sudo rm -R ~/Monitor/*" >> $START_SCRIPT
            echo "sudo motion -c /etc/motion/motion.conf" >> $START_SCRIPT
            echo "Step 9: Create stop script '${STOP_SCRIPT}' for server 'motion'"
            touch $STOP_SCRIPT
