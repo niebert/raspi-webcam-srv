@@ -59,13 +59,20 @@ echo "(2) Create Start Script for Server: ${START_SCRIPT}"
 touch ${START_SCRIPT}
 echo "ffserver -f ${CONF_FILE} & ffmpeg -v verbose -r 5 -s ${VIDEO_SIZE} -f video4linux2 -i /dev/video0 -f lavfi -i aevalsrc=0 -c:a libmp3lame http://localhost:${SERVER_PORT}/${STREAM_NAME}.ffm" >> $START_SCRIPT
 echo "(3) Compile ffserver"
+echo "(3.1) Update Upgrade for 'apt-get'"
 sudo apt-get update
 sudo apt-get upgrade
+echo "(3.2) Install checkinstall"
+sudo apt-get -y install checkinstall
 sudo apt-get -y install autoconf automake build-essential git libass-dev libgpac-dev libsdl1.2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libx11-dev libxext-dev libxfixes-dev pkg-config texi2html zlib1g-dev
 checkinstall yasm libmp3lame-dev libopus-dev
+echo "(3.3) Create '/ffmpeg_sources' "
+### recursive remove of previous 'ffmepg_source' 
+rm -R  ~/ffmpeg_sources
+### create a new empty directory 'ffmepg_source'
 mkdir ~/ffmpeg_sources
 cd ~/ffmpeg_sources
-git clone –depth 1 git://git.videolan.org/x264.git
+git clone git://git.videolan.org/x264.git
 cd x264
 ./configure –prefix=“$HOME/ffmpeg_build“ –bindir=“$HOME/bin“ –enable-static
 make
