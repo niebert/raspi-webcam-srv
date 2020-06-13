@@ -11,10 +11,15 @@ Raspberry Pi - Webserver installation Script
 * Install `git` with `sudo apt-get install git` on your Raspberry Pi.
 * Clone this repository by `git clone https://github.com/niebert/raspi-webcam-srv.git`
 * Change to director `cd raspi-webcam-srv`
-* Call installation script `sh install_rasp_webcam_srv.sh`
+* You can install two different servers by calling one of the following installation scripts
+  * **motion:**   `sh install_motion_srv.sh`
+  * **ffserver:** `sh install_ffserver.sh` - check default settings of the install script
 
 ## Start WebCam Server
-* You can start the WebCam server with `sudo motion -c /etc/motion/motion.conf`
+You can start the WebCam server with start scripts:
+  * **motion:**   `sh start_motion_srv.sh`
+  * **ffserver:** `sh start_ffserver.sh`
+You can also start the `motion` server manually by `sudo motion -c /etc/motion/motion.conf`
 
 ## Video Streaming with VLC
 
