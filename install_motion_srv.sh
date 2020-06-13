@@ -58,17 +58,17 @@ do
            sed -i "s/MOTION_SERVER_STREAM_PORT/${SERVER_STREAM_PORT}/g" $CONF_FILE 
            
            sudo cp $CONF_FILE /etc/motion/motion.conf
-           echo "Step 6: Copy the default for '/etc/default/motion'"
+           echo "Step 7: Copy the default for '/etc/default/motion'"
            sudo cp ./conf/etc_default_motion.conf /etc/default/motion
-           echo "Step 7: Create start script '${START_SCRIPT}' 'motion' with Config File"
+           echo "Step 8: Create start script '${START_SCRIPT}' 'motion' with Config File"
            touch $START_SCRIPT
            echo "#!/bin/sh" >> $START_SCRIPT
            echo "sudo motion -c /etc/motion/motion.conf" >> $START_SCRIPT
-           echo "Step 8: Create stop script '${STOP_SCRIPT}' for server 'motion'"
+           echo "Step 9: Create stop script '${STOP_SCRIPT}' for server 'motion'"
            touch $STOP_SCRIPT
            echo "#!/bin/sh" >> $STOP_SCRIPT
            echo "sudo service motion stop" >> $STOP_SCRIPT
-           echo "Step 9: Now you can start 'motion' with config file with:"
+           echo "Step 10: Now you can start 'motion' with config file with:"
            echo "  sudo motion -c /etc/motion/motion.conf"
            echo "or with the start script '${START_SCRIPT}' by"
            echo "  sh ${START_SCRIPT}"
