@@ -12,7 +12,7 @@ SERVER_STREAM_PORT="8081"
 ## Default for VIDEO_STREAM_MAXRATE is 1 - means slow update of stream images
 VIDEO_STREAM_MAXRATE="25"
 ## Video Stream Quality percentage of the source video stream (default 50 means 50%)
-VIDEO_STREAM_QUALILTY="100"
+VIDEO_STREAM_QUALITY="100"
 # Video Stream Size
 VIDEO_SIZE_WIDTH="368"
 VIDEO_SIZE_HEIGHT="288"
