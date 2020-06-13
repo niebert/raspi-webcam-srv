@@ -3,6 +3,7 @@
 ## GitHub-Source: https://github.com/niebert/raspi-webcam-srv
 ## Further Information see URL: https://kopfkino.irosaurus.com/webcam-livestream-mit-dem-raspberry-pi/
 ## The following variable define the Videostream
+rm -R ffmpeg_sources
 SERVER_PORT="8091"
 CONF_DIR="./conf"
 CONF_FILE="${CONF_DIR}/ffserver_webm.conf"
