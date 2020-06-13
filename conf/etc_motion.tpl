@@ -446,13 +446,14 @@ ipv6_enabled off
 
 # The mini-http server listens to this port for requests (default: 0 = disabled)
 # E.g.set stream_port 8081
-stream_port SERVER_STREAM_PORT
+stream_port MOTION_SERVER_STREAM_PORT
 
 # 50% scaled down substream (default: 0 = disabled)
 # substream_port 8082
 
 # Quality of the jpeg (in percent) images produced (default: 50)
-stream_quality 100
+# e.g. stream_quality 50
+stream_quality MOTION_VIDEO_STREAM_QUALILTY
 
 # Output frames at 1 fps when no motion is detected and increase to the
 # rate given by stream_maxrate when motion is detected (default: off)
@@ -460,7 +461,7 @@ stream_motion off
 
 # Maximum framerate for stream streams (default: 1)
 # E.g. stream_maxrate 1
-stream_maxrate MOTION_STREAM_MAXRATE
+stream_maxrate MOTION_VIDEO_STREAM_MAXRATE
 
 # Restrict stream connections to localhost only (default: on)
 stream_localhost off
