@@ -58,6 +58,13 @@ Once the stream has started, all you need to do is open a new network stream in 
 
 Please keep in mind that there is no password protection for viewing the video stream. 
 
+## Background Information about Installation Scripts
+* All script are shell scripts that are interpreted with `sh`.
+* The script can be made executable e.g. by `sudo chmod u+x install_motion_srv.sh`
+
+### Motion Installation Script
+The motion installation script basically copies the template file `conf/ete_motion.tpl` onto `conf/etc_motion_motion.conf`. Then variables like `MOTION_VIDEO_FRAME_RATE` in  `conf/etc_motion_motion.conf` are replaced by defined values in the installation script. The replacement is performed with the stream editor `sed`. When all replacesments are performed sucessfully, then the file  `conf/etc_motion_motion.conf` is copied to the final destination of the generated configuration file `/etc/motion/motion.conf`. The  filenames in the subdirectory `/conf` with the extension `conf` are create according to the pathname where the generated file will stored. The `conf/etc_default_motion.conf` will be stored at `/etc/default/motion`.
+
 ## Links
 The installation scripts are based on the recommendations of the following resources:
 * https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu
