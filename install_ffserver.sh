@@ -70,19 +70,19 @@ cd x264
 make
 sudo checkinstall
 cd ~/ffmpeg_sources
-git clone –depth 1 git://github.com/mstorsjo/fdk-aac.git
+git clone git://github.com/mstorsjo/fdk-aac.git
 cd fdk-aac
 autoreconf -fiv
 ./configure –prefix=“$HOME/ffmpeg_build“ –disable-shared
 sudo checkinstall
 cd ~/ffmpeg_sources
-git clone –depth 1 http://git.chromium.org/webm/libvpx.git
+git clone http://git.chromium.org/webm/libvpx.git
 cd libvpx
 ./configure –prefix=“$HOME/ffmpeg_build“ –disable-examples
 make
 sudo checkinstall
 cd ~/ffmpeg_sources
-git clone –depth 1 git://source.ffmpeg.org/ffmpeg
+git clone git://source.ffmpeg.org/ffmpeg
 cd ffmpeg
 PKG_CONFIG_PATH=“$HOME/ffmpeg_build/lib/pkgconfig“
 export PKG_CONFIG_PATH
