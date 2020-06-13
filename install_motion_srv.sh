@@ -58,7 +58,8 @@ do
            sed -i "s/MOTION_VIDEO_STREAM_QUALITY/${VIDEO_STREAM_QUALITY}/g" $CONF_FILE 
            echo "  6.5 Replace 'MOTION_SERVER_STREAM_PORT' by '${SERVER_STREAM_PORT}' in file $CONF_FILE"
            sed -i "s/MOTION_SERVER_STREAM_PORT/${SERVER_STREAM_PORT}/g" $CONF_FILE 
-           
+            
+            
            sudo cp $CONF_FILE /etc/motion/motion.conf
            echo "Step 7: Copy the default for '/etc/default/motion'"
            sudo cp ./conf/etc_default_motion.conf /etc/default/motion
