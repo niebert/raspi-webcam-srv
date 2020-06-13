@@ -32,9 +32,10 @@ echo " "
 read -p "WebCam Width (e.g. 368)? " sizeinput
 if [ -z "$sizeinput" ]
 then
-      echo "WARNING: \$sizeinput is empty"
+      echo "WARNING: \$sizeinput is empty. Use default VIDEO_SIZE_WIDTH='${VIDEO_SIZE_WIDTH}'"
 else
-      echo "Set VIDEO_SIZE_WIDTH='$sizeinput'. Use default VIDEO_SIZE_WIDTH='${VIDEO_SIZE_WIDTH}'"
+      echo "Set VIDEO_SIZE_WIDTH='$sizeinput'"
+      VIDEO_SIZE_WIDTH="$sizeinput"
 fi
 read -p "WebCam Height (e.g. 288)? " sizeinput
 if [ -z "$sizeinput" ]
@@ -42,6 +43,7 @@ then
       echo "WARNING: \$sizeinput is empty. Use default VIDEO_SIZE_HEIGHT='${VIDEO_SIZE_HEIGHT}'"
 else
       echo "Set VIDEO_SIZE_HEIGHT='$sizeinput' "
+      VIDEO_SIZE_HEIGHT="$sizeinput"
 fi
 echo "List of USB Device"
 echo "------------------"
