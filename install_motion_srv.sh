@@ -8,6 +8,7 @@ CONF_DIR="./conf"
 CONF_FILE="${CONF_DIR}/etc_motion_motion.conf"
 START_SCRIPT="start_motion_srv.sh"
 VIDEO_FRAME_RATE="10"
+VIDEO_STREAM_MAXRATE="100"
 VIDEO_SIZE_WIDTH="368"
 VIDEO_SIZE_HEIGHT="288"
 echo "Install WebCam Server with Motion"
@@ -36,6 +37,7 @@ do
            sed -i "s/MOTION_VIDEO_SIZE_WIDTH/${VIDEO_SIZE_WIDTH}/g" $CONF_FILE
            sed -i "s/MOTION_VIDEO_SIZE_HEIGHT/${VIDEO_SIZE_HEIGHT}/g" $CONF_FILE
            sed -i "s/MOTION_VIDEO_FRAME_RATE/${VIDEO_FRAME_RATE}/g" $CONF_FILE 
+           sed -i "s/MOTION_STREAM_MAXRATE/${VIDEO_STREAM_MAXRATE}/g" $CONF_FILE 
            sudo cp $CONF_FILE /etc/motion/motion.conf
            echo "Step 6: Copy the default for '/etc/default/motion'"
            sudo cp ./conf/etc_default_motion.conf /etc/default/motion
